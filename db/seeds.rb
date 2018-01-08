@@ -11,20 +11,11 @@ Language.create!(country_name: "Bahasa Indonesia")
 #Language.create!(country_name: "日本語")
 User.create!(name:  "Crescent Moon",
              email: "maulanamania@gmail.com",
-             password:              "T4jmahal",
-             password_confirmation: "T4jmahal",
-             admin: true,
+             password:              "foobar",
+             password_confirmation: "foobar",
              language_id: 1,
              activated: true,
              activated_at: Time.zone.now)
-#User.create!(name:  "Example User",
-#             email: "example@railstutorial.org",
-#             password:              "foobar",
-#             password_confirmation: "foobar",
-#             language_id: 1,
-#             activated: true,
-#             activated_at: Time.zone.now)
-             
 
 #99.times do |n|
 #  name  = Faker::Name.name
