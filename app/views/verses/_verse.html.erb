@@ -1,0 +1,6 @@
+<li id="verse">
+  <span class="number">( <%=verse.number%> )</span></br>
+  <span class="content"><%= verse.content %></span></br>
+  <span class="translation"><%= verse.translations.find_by(language: @user.language_id).content %></span>
+  
+</li>

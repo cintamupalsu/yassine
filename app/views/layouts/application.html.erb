@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Shine03</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-	<%= javascript_pack_tag "application" %>
-	<%= stylesheet_pack_tag "application" %>
+    <%= render 'layouts/shim' %>
   </head>
 
-  <body class="container">
-	  <% if notice.present? %>
-	  	<aside class="alert alert-info">
-			<%= notice %>
-		</aside>
-	  <% end %>
-	  <% if alert.present? %>
-	  	<aside class="alert alert-danger">
-			<%= alert %>
-		</aside>
-	  <% end %>
-      <%= yield %>
+  <body>
+    <%= render 'layouts/header' %>
+	<div class="container">
+	    <% flash.each do |message_type, message| %>
+	    	<div class="alert alert-<%= message_type %>"><%= message %></div>
+	    <% end %>
+    	<%= yield %>
+		<%= render 'layouts/footer' %>
+		<%= debug(params) if Rails.env.development? %>
+	</div>
   </body>
 </html>

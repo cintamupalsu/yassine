@@ -1,0 +1,11 @@
+<% provide(:title, 'Quran chapters') %>
+<h1>Chapters</h1>
+
+<%= will_paginate @chapters%>
+
+<ul class="chapters">
+
+		<%= render @chapters %>
+
+</ul>
+<%= will_paginate @chapters%>

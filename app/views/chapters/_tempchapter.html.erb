@@ -1,0 +1,14 @@
+<li>
+	
+	<% if chapter.city=="Meccan"%>
+		<%= link_to image_tag("mecca.png", alt: "mecca logo", size: "50x50", id:"meccaLogo"), chapter %>
+	<% else %>
+		<%= link_to image_tag("medina.png", alt: "medina logo", size: "50x50", id:"medinaLogo"), chapter %>
+	<% end %>
+
+	<%= link_to chapter.english_name, chapter %>
+	<span class="arabic">
+		<%= link_to chapter.arabic_name, chapter %>
+	</span>
+   
+</li>
